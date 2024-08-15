@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>स्वतंत्रता दिवस</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            color: #ff4500;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .flag {
+            width: 300px;
+            height: 150px;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .flag img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            animation: hoistFlag 4s ease-in-out infinite;
+        }
+
+        @keyframes hoistFlag {
+            0% {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            50% {
+                transform: translateY(0%);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10%);
+                opacity: 0.8;
+            }
+        }
+
+        .animation {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .flame {
+            width: 50px;
+            height: 100px;
+            background: linear-gradient(to top, #ff9900, #ffcc00);
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(255, 165, 0, 0.7);
+            animation: flameAnimation 2s infinite ease-in-out;
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        @keyframes flameAnimation {
+            0% {
+                transform: scaleY(1);
+                opacity: 0.8;
+            }
+            50% {
+                transform: scaleY(1.5);
+                opacity: 1;
+            }
+            100% {
+                transform: scaleY(1);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px auto;
+                padding: 10px;
+            }
+            .flag {
+                width: 200px;
+                height: 100px;
+            }
+            .flame {
+                width: 40px;
+                height: 80px;
+                margin: 5px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .contact-page {
+            background: #ffffff;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .contact-page h2 {
+            color: #ff4500;
+            margin-bottom: 20px;
+        }
+
+        .message-board, .guestbook, .contact-form, .motivation-section, .instagram-video, .login-form, .magic-surprise, .user-profile {
+            margin-bottom: 30px;
+        }
+
+        .message-board textarea, .contact-form textarea, .login-form input[type="text"], .login-form input[type="password"], .user-profile p {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .message-board button, .contact-form button, .login-form button, .magic-surprise button {
+            background-color: #ff4500;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .message-board button:hover, .contact-form button:hover, .login-form button:hover, .magic-surprise button:hover {
+            background-color: #ff6700;
+        }
+
+        .guestbook {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            max-height: 200px;
+            overflow-y: auto;
+            background-color: #f9f9f9;
+        }
+
+        .guestbook p {
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            margin: 0;
+        }
+
+        .social-media {
+            margin-top: 20px;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #ff4500;
+        }
+
+        .motivation-section {
+            background: linear-gradient(45deg, #ff6600, #ffcc00);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            color: #fff;
+        }
+
+        .motivation-section h3 {
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .motivation-section p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .quote {
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        .instagram-video {
+            margin: 20px auto;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .instagram-video iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+
+        .login-form {
+            background: #ffffff;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            max-width: 400px;
+        }
+
+        .login-form h3 {
+            color: #ff4500;
+            margin-bottom: 20px;
+        }
+
+        .magic-surprise {
+            background: #fff3e0;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            max-width: 400px;
+        }
+
+        .magic-surprise h3 {
+            color: #ff4500;
+            margin-bottom: 15px;
+        }
+
+        .magic-surprise .surprise-message {
+            display: none;
+            background-color: #ffffcc;
+            border: 1px solid #ffcc00;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .footer {
+            background-color: #ff4500;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .user-profile {
+            background: #ffffff;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            max-width: 400px;
+        }
+
+        .user-profile h3 {
+            color: #ff4500;
+            margin-bottom: 15px;
+        }
+
+        .user-profile img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>78वीं स्वतंत्रता दिवस की शुभकामनाएँ!</h1>
+        <div class="flag">
+            <img src="http://www.hdwallpaperslife.com/wp-content/uploads/2018/05/national_flag_of_india_4k_5k.jpg" alt="भारतीय तिरंगा">
+        </div>
+        <div class="animation">
+            <div class="flame"></div>
+            <div class="flame"></div>
+            <div class="flame"></div>
+        </div>
+    </div>
+
+    <!-- Motivation Section -->
+    <div class="motivation-section">
+        <h3>Motivational Quotes & Advice</h3>
+        <p>“The best way to predict the future is to create it.” – Vishal Deshmukh</p>
+        <p class="quote">“Freedom is never free.” – Unknown</p>
+        <p>Let's celebrate our freedom with pride and continue to strive for a better future for all. Every small effort counts in building a strong nation.</p>
+    </div>
+
+    <!-- Instagram Video Section -->
+    <div class="instagram-video">
+        <!-- Replace with actual Instagram embed code -->
+        <iframe src="https://www.instagram.com/reel/C-j2AVhhr4l/embed" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <!-- Login Form -->
+    <div class="login-form">
+        <h3>Login to Your Account</h3>
+        <form>
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <!-- Contact Page Section -->
+    <div class="contact-page">
+        <h2>Freedom Connect: Share Your Thoughts</h2>
+        
+        <!-- Message Board -->
+        <div class="message-board">
+            <h3>Message Board</h3>
+            <textarea placeholder="Share your thoughts and greetings here..."></textarea>
+            <button>Post Message</button>
+        </div>
+        
+        <!-- Guestbook -->
+        <div class="guestbook">
+            <h3>Guestbook</h3>
+            <p>Welcome to the guestbook! Feel free to leave your message here.</p>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <h3>Contact Us</h3>
+            <form>
+                <textarea placeholder="Your message here..."></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+        
+        <!-- Magic Surprise Section -->
+        <div class="magic-surprise">
+            <h3>Click for a Magic Surprise!</h3>
+            <button id="reveal-button">Reveal Surprise</button>
+            <div class="surprise-message" id="surprise-message">
+                🎉✨ Surprise! 🎉✨
+                <p>Thank you for visiting our site. We hope you enjoy the celebration!</p>
+            </div>
+        </div>
+
+        <!-- User Profile Section -->
+        <div class="user-profile">
+            <h3>User Profile</h3>
+            <img src="https://tse3.mm.bing.net/th?id=OIP.uNSdFKGdyY3WeYDgYAAbuQHaE8&pid=Api&P=0&h=180" alt="User Profile Picture">
+            <p><strong>Name:</strong> Vishal Deshmukh</p>
+            <p><strong>Email:</strong> vishaldeshmukh7972@gmail.com</p>
+            <p><strong>Bio:</strong> A passionate individual committed to celebrating freedom and inspiring others.</p>
+        </div>
+        
+        <!-- Social Media Integration -->
+        <div class="social-media">
+            <h3>Share on Social Media</h3>
+            <a href="#">Facebook</a>
+            <a href="https://www.linkedin.com/in/vishal-deshmukh-9a814324a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">Linkedin</a>
+            <a href="https://www.instagram.com/vishal_deshmukh_34?igsh=YmQ1cHEwNmtoYTEx">Instagram</a>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 स्वतंत्रता दिवस. All rights reserved.</p>
+    </div>
+    
+    <script>
+        // Flame animation delay
+        const flames = document.querySelectorAll('.flame');
+        flames.forEach((flame, index) => {
+            flame.style.animationDelay = `${index * 0.2}s`;
+        });
+
+        // Message board functionality
+        const messageBoardButton = document.querySelector('.message-board button');
+        messageBoardButton.addEventListener('click', () => {
+            const messageText = document.querySelector('.message-board textarea').value;
+            if (messageText) {
+                const guestbook = document.querySelector('.guestbook');
+                const newMessage = document.createElement('p');
+                newMessage.textContent = messageText;
+                guestbook.appendChild(newMessage);
+                document.querySelector('.message-board textarea').value = ''; // Clear the textarea
+            }
+        });
+
+        // Magic surprise functionality
+        const revealButton = document.getElementById('reveal-button');
+        const surpriseMessage = document.getElementById('surprise-message');
+        revealButton.addEventListener('click', () => {
+            surpriseMessage.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
